@@ -29,7 +29,7 @@ func Command() ([]models.BikeStation, error) {
 
 		path, _ := exec.LookPath("java")
 		fmt.Println("========== START JAR ========== \n ")
-		cmd := exec.Command(path, "-cp", "java-example-consumer.jar:.", "org.bigiot.examples.ExampleConsumer")
+		cmd := exec.Command(path, "-cp", "./java-example-consumer.jar:.", "org.bigiot.examples.ExampleConsumer")
 
 		_, err = cmd.Output()
 		if err != nil {

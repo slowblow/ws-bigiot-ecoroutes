@@ -1,0 +1,14 @@
+package: ws-bigiot-ecoroutes
+import:
+- package: github.com/astaxie/beego
+  version: v1.10.1
+- package: github.com/dgrijalva/jwt-go
+  version: v3.2.0
+  subpackages:
+  - request
+- package: github.com/gorilla/mux
+  version: v1.6.2
+- package: github.com/kellydunn/golang-geo
+  version: v0.7.0
+- package: github.com/urfave/negroni
+  version: v1.0.0

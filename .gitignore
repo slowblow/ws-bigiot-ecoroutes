@@ -6,3 +6,5 @@ vendor
 ws-bigiot-services
 accounting/
 Dama-BikeSharing.log
+Points.json
+out.json
