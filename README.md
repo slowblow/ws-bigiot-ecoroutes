@@ -19,10 +19,6 @@ Microservice to provide the best route between 2 points of BCN, providing a bike
 
 ###POST GetRoute:
 
-#####Description:
-
-	método para descargar los vehículos de una región
-
 #####Input parameters (JSON):
 
 	* ini_point:
