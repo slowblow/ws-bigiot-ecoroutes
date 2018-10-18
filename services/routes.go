@@ -7,10 +7,10 @@ import (
 	"net/http"
 	"sort"
 
-	"ws-bigiot-services/models"
-	"ws-bigiot-services/utils"
+	"ws-bigiot-ecoroutes/models"
+	"ws-bigiot-ecoroutes/utils"
 
-	"ws-bigiot-services/utils/java"
+	"ws-bigiot-ecoroutes/utils/java"
 
 	geo "github.com/kellydunn/golang-geo"
 )

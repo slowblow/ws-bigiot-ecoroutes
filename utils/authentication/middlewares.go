@@ -9,13 +9,14 @@ import (
 	"net/http"
 	"os"
 	"strings"
-	"time"
 
-	"bitbucket.org/sparsitytechnologies/go-ws-tools/models"
-	modelsTools "bitbucket.org/sparsitytechnologies/go-ws-tools/models"
-	utilsTools "bitbucket.org/sparsitytechnologies/go-ws-tools/utils"
-	httpWsTools "bitbucket.org/sparsitytechnologies/go-ws-tools/utils/http"
-	modelUser "bitbucket.org/sparsitytechnologies/user-api/models"
+	"ws-bigiot-ecoroutes/models"
+
+	modelsTools "ws-bigiot-ecoroutes/models"
+
+	utilsTools "ws-bigiot-ecoroutes/utils"
+
+	httpWsTools "ws-bigiot-ecoroutes/utils/http"
 
 	"github.com/astaxie/beego"
 	jwt "github.com/dgrijalva/jwt-go"
@@ -135,47 +136,6 @@ func getToken(rw http.ResponseWriter, req *http.Request) (*jwt.Token, error) {
 }
 
 func tokenTimeToLifeValidation(rw http.ResponseWriter, token string /*req *http.Request,*/, next http.HandlerFunc) (boolean bool) {
-
-	//var authorization = req.Header.Get("Authorization")
-	//var token = authorization[7:len(authorization)]
-	//fmt.Println("Token " + token)
-
-	userLoginDB := modelUser.FindUserLoginByToken(token)
-	if userLoginDB.ID != 0 {
-		var updatedAt = userLoginDB.UpdatedAt
-		var createdAt = userLoginDB.CreatedAt
-
-		var tokenTimeToLife, err1 = beego.AppConfig.Int("TokenTimeToLife")
-		if err1 != nil {
-			tokenTimeToLife = 30
-		}
-		updatedAt = updatedAt.Add(time.Duration(tokenTimeToLife) * time.Minute)
-
-		var tokenMaxTimeToLife, err2 = beego.AppConfig.Int("TokenMaxTimeToLife")
-		if err2 != nil {
-			tokenMaxTimeToLife = 240
-		}
-		createdAt = updatedAt.Add(time.Duration(tokenMaxTimeToLife) * time.Minute)
-
-		now := time.Now()
-
-		if updatedAt.Before(now) {
-			fmt.Println("TOKEN: Time exceded.")
-			models.PrintErrorResponse(rw, http.StatusUnauthorized, "TOKEN: Time exceded.")
-			return false
-		} else if createdAt.Before(now) {
-			fmt.Println("TOKEN: Max Time exceded.")
-			models.PrintErrorResponse(rw, http.StatusUnauthorized, "TOKEN: Max Time exceded.")
-			return false
-		} else {
-			modelUser.UpdateUserLogin(userLoginDB)
-		}
-
-	} else {
-		fmt.Println("TOKEN: it doesn't exist.")
-		models.PrintErrorResponse(rw, http.StatusUnauthorized, "TOKEN: it doesn't exist.")
-		return false
-	}
 
 	return true
 }

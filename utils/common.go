@@ -9,7 +9,8 @@ import (
 	"os"
 	"strings"
 
-	"bitbucket.org/sparsitytechnologies/go-ws-tools/models"
+	"ws-bigiot-ecoroutes/models"
+
 	"github.com/astaxie/beego"
 )
 

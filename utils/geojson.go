@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"strings"
 
-	"ws-bigiot-services/models"
+	"ws-bigiot-ecoroutes/models"
 )
 
 const (

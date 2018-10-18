@@ -6,7 +6,7 @@ import (
 	"io/ioutil"
 	"os"
 	"os/exec"
-	"ws-bigiot-services/models"
+	"ws-bigiot-ecoroutes/models"
 
 	"github.com/astaxie/beego"
 )

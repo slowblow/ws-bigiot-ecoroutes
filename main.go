@@ -8,7 +8,7 @@ import (
 
 	"github.com/astaxie/beego"
 
-	"ws-bigiot-services/routers"
+	"ws-bigiot-ecoroutes/routers"
 )
 
 func main() {

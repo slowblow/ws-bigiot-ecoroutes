@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"net/url"
 	"strings"
-	"ws-bigiot-services/models"
+	"ws-bigiot-ecoroutes/models"
 )
 
 var GOOGLE_DIRECTIONS_MODE_WALK = "walking"

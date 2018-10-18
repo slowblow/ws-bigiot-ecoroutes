@@ -1,8 +1,8 @@
 package routers
 
 import (
-	"ws-bigiot-services/services"
-	"ws-bigiot-services/utils"
+	"ws-bigiot-ecoroutes/services"
+	"ws-bigiot-ecoroutes/utils"
 
 	"github.com/gorilla/mux"
 	"github.com/urfave/negroni"
@@ -35,7 +35,7 @@ var RoutesWSArray = RoutesWS{
 	RouteWS{
 		"POST GetRoutes",
 		"POST",
-		"/ws-bigiot-services/routes",
+		"/ws-bigiot-ecoroutes/routes",
 		nil,
 		services.GetRoutes,
 	},
@@ -43,7 +43,7 @@ var RoutesWSArray = RoutesWS{
 		RouteWS{
 			"GET GetRoutes",
 			"GET",
-			"/ws-bigiot-services/routes",
+			"/ws-bigiot-ecoroutes/routes",
 			nil,
 			services.GetRoutes,
 		},
