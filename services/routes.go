@@ -179,7 +179,7 @@ func GoogleServicesAPI(initPoint models.Point, endPoint models.Point, closerBike
 	routes := []models.Route{}
 	var err error
 	googleDirections := &utils.GoogleDirections{
-		APIKey: "AIzaSyATqqadxqycHK73sIH7tl3xv7IfOiTndBA",
+		APIKey: "",
 	}
 
 	IniDirectionsReponses := []models.DirectionsReponse{}

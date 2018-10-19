@@ -19,8 +19,6 @@ type GoogleDirections struct {
 
 var GOOGLE_DIRECTIONS_URL = "https://maps.googleapis.com/maps/api/directions/json?"
 
-// AIzaSyATqqadxqycHK73sIH7tl3xv7IfOiTndBA
-
 var GOOGLE_DIRECTIONS_STATUS_OK = "OK"
 
 func (g *GoogleDirections) GetRoutingDistance(latini, lngini, latfin, lngfin float64, mode string) (*models.DirectionsReponse, error) {
