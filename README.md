@@ -19,10 +19,6 @@ Microservice to provide the best route between 2 points of BCN, providing a bike
 
 ###POST GetRoute:
 
-#####Description:
-
-	método para descargar los vehículos de una región
-
 #####Input parameters (JSON):
 
 	* ini_point:
@@ -113,10 +109,12 @@ curl -H "Content-Type: application/json" -d '{"ini_point": {"Latitude":41.38951,
 ##Docker
 
 #####Build image
+
 docker build --no-cache -f Dockerfile -t ws-bigiot-ecoroutes .
 
 
 #####Run container
+
 docker run -p 8438:8080 --name ws-bigiot-ecoroutes -d ws-bigiot-ecoroutes
 
 
